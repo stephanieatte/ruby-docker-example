@@ -4,3 +4,12 @@ steps:
     plugins:
       docker-compose#v3.9.0:
         run: app
+
+  - name: ":bundle:"
+    command: "bundle exec rspec"
+    plugins:
+      docker-compose#v3.9.0:
+        run: app
+        env:
+         - BUILDKITE_ANALTYICS_TOKEN="9gaGBMKotRQUsd6j2QPFsTJc"
+        
