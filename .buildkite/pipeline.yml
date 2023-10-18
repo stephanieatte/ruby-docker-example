@@ -5,6 +5,21 @@ steps:
       docker-compose#v3.9.0:
         run: app
 
+  - name: ":rspec:"
+    command: "rspec --color specs"
+    plugins:
+      docker-compose#v3.9.0:
+        run: app
+        env:
+         - BUILDKITE_ANALTYICS_TOKEN="9gaGBMKotRQUsd6j2QPFsTJc"
+         - BUILDKITE_BUILD_ID="$BUILDKITE_BUILD_ID"
+         - BUILDKITE_BUILD_NUMBER="$BUILDKITE_BUILD_NUMBER" 
+         - BUILDKITE_JOB_ID="$BUILDKITE_BUILD_NUMBER" 
+         - BUILDKITE_BRANCH="$BUILDKITE_BUILD_NUMBER" 
+         - BUILDKITE_COMMIT="$BUILDKITE_BUILD_NUMBER" 
+         - BUILDKITE_MESSAGE="$BUILDKITE_BUILD_NUMBER" 
+         - BUILDKITE_BUILD_URL="$BUILDKITE_BUILD_NUMBER"
+
   - name: ":bundle:"
     command: "bundle exec rspec"
     plugins:
@@ -12,4 +27,11 @@ steps:
         run: app
         env:
          - BUILDKITE_ANALTYICS_TOKEN="9gaGBMKotRQUsd6j2QPFsTJc"
+         - BUILDKITE_BUILD_ID="$BUILDKITE_BUILD_ID"
+         - BUILDKITE_BUILD_NUMBER="$BUILDKITE_BUILD_NUMBER" 
+         - BUILDKITE_JOB_ID="$BUILDKITE_BUILD_NUMBER" 
+         - BUILDKITE_BRANCH="$BUILDKITE_BUILD_NUMBER" 
+         - BUILDKITE_COMMIT="$BUILDKITE_BUILD_NUMBER" 
+         - BUILDKITE_MESSAGE="$BUILDKITE_BUILD_NUMBER" 
+         - BUILDKITE_BUILD_URL="$BUILDKITE_BUILD_NUMBER"
         
