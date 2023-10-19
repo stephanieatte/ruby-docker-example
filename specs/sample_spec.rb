@@ -1,4 +1,4 @@
-# require "rspec"
+require "rspec"
 
 RSpec.describe "A sample test" do
   it "runs aok" do
