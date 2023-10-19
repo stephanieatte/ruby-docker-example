@@ -1,4 +1,6 @@
 require "rspec"
+require 'rails_helper'
+require 'rspec/rails'
 
 RSpec.describe "A sample test" do
   it "runs aok" do
