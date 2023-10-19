@@ -1,0 +1,23 @@
+steps: 
+  - key: specs
+    name: Specs %N
+    label: ":ruby: :rubysec: :rails:"
+    retry:
+      automatic: true
+    agents:
+      queue: default
+    plugins:
+    - docker-compose#v3.9.0:
+        env:
+          - BUILDKITE_BRANCH
+          - BUILDKITE_BUILD_ID
+          - BUILDKITE_BUILD_NUMBER
+          - BUILDKITE_BUILD_URL
+          - BUILDKITE_COMMIT
+          - BUILDKITE_JOB_ID
+          - BUILDKITE_MESSAGE
+        run: buildkite_tests
+        config: docker-compose.yml
+        mount-buildkite-agent: true
+    commands:
+    - "echo hi"
