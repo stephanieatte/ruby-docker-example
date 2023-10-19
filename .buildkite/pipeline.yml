@@ -4,3 +4,13 @@ steps:
     plugins:
       docker-compose#v3.9.0:
         run: app
+        env:
+            - BUILDKITE_BUILD_NUMBER
+            - BUILDKITE_PULL_REQUEST
+            - BUILDKITE_ANALYTICS_TOKEN 
+            - BUILDKITE_BUILD_ID 
+            - BUILDKITE_JOB_ID 
+            - BUILDKITE_BRANCH 
+            - BUILDKITE_COMMIT 
+            - BUILDKITE_MESSAGE 
+            - BUILDKITE_BUILD_URL 
