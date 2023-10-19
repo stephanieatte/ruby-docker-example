@@ -34,4 +34,20 @@ steps:
          - BUILDKITE_COMMIT
          - BUILDKITE_MESSAGE 
          - BUILDKITE_BUILD_URL
+         
+  - name: ":bundle:"
+    command: "bundle exec rspec"
+    plugins:
+      docker-compose#v3.9.0:
+        run: app
+        config: docker-compose.yml
+        env:
+         - BUILDKITE_ANALTYICS_TOKEN="9gaGBMKotRQUsd6j2QPFsTJc"
+         - BUILDKITE_BUILD_ID
+         - BUILDKITE_BUILD_NUMBER
+         - BUILDKITE_JOB_ID
+         - BUILDKITE_BRANCH
+         - BUILDKITE_COMMIT
+         - BUILDKITE_MESSAGE 
+         - BUILDKITE_BUILD_URL
         
