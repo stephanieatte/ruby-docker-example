@@ -1,6 +1,6 @@
 steps: 
   - key: specs
-    name: Specs %N
+    name: Yaml Upload Repo
     label: ":ruby: :rubysec: :rails:"
     retry:
       automatic: true
@@ -20,4 +20,4 @@ steps:
         run: app
         config: docker-compose.yml
         mount-buildkite-agent: true
-    command: "rspec"
+    command: "rspec --color specs"
