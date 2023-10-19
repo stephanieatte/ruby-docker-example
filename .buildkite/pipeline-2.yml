@@ -21,4 +21,5 @@ steps:
         config: docker-compose.yml
         mount-buildkite-agent: true
     commands:
-    - "echo hi"
+    - "bundle exec rspec"
+    - "bundle exec app"
