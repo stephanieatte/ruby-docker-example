@@ -9,7 +9,7 @@ steps:
     plugins:
     - docker-compose#v3.9.0:
         env:
-          - BUILDKITE_ANALYTICS_TOKEN="pBkTHnqjgVJsaHpNHX4D7kAx"
+          - BUILDKITE_ANALYTICS_TOKEN
           - BUILDKITE_BRANCH
           - BUILDKITE_BUILD_ID
           - BUILDKITE_BUILD_NUMBER
