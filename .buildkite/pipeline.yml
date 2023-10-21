@@ -1,6 +1,6 @@
 steps:           
 - label: "run post script"
-   command: |
+  command: |
       curl \
        -X POST \
        -H "Authorization: Token token=\"$BUILDKITE_ANALYTICS_TOKEN\"" \
