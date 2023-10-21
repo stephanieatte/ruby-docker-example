@@ -1,9 +1,29 @@
 steps:           
- 
-       
   - name: ":rspec:"
     command: "rspec --color specs"
     plugins:
       docker-compose#v3.9.0:
         run: app
+
+
+  - name: "Add ENV Vars"
+    command: "rspec --color specs"
+    plugins:
+      docker-compose#v3.9.0:
+        run: app
+        env:
+            - BUILDKITE_ANALYTICS_TOKEN="GhW4AA9V92HH4G9KarCV2fdy"
+            - run_env[CI]=buildkite
+            - run_env[key]=$BUILDKITE_BUILD_ID
+            - run_env[url]=$BUILDKITE_BUILD_URL
+            - run_env[branch]=$BUILDKITE_BRANCH
+            - run_env[commit_sha]=$BUILDKITE_COMMIT
+            - run_env[number]=$BUILDKITE_BUILD_NUMBER
+            - run_env[job_id]=$BUILDKITE_JOB_ID
+            - run_env[message]=$BUILDKITE_MESSAGE
+    
+     
+
+
+       
  
