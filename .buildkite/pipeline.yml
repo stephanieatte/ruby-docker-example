@@ -13,12 +13,10 @@ steps:
        -F "run_env[job_id]=$BUILDKITE_JOB_ID" \
        -F "run_env[message]=$BUILDKITE_MESSAGE" \
        https://analytics-api.buildkite.com/v1/upload
-      
-  - command: "rspec --color specs"
-    label: "Run App"
+       
+  - name: ":rspec:"
+    command: "rspec --color specs"
     plugins:
-     docker-compose#v3.9.0:
-       run: app
-   
-  
+      docker-compose#v3.9.0:
+        run: app
  
