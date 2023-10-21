@@ -1,6 +1,9 @@
 steps:           
-- label: "run post script"
-  command: |
+ - label: "run post script"
+   plugins:
+     docker-compose#v3.9.0:
+       run: app
+   command: |
       curl \
        -X POST \
        -H "Authorization: Token token=\"$BUILDKITE_ANALYTICS_TOKEN\"" \
@@ -13,9 +16,7 @@ steps:
        -F "run_env[job_id]=$BUILDKITE_JOB_ID" \
        -F "run_env[message]=$BUILDKITE_MESSAGE" \
        https://analytics-api.buildkite.com/v1/upload
- - name: ":rspec:"
-   command: "rspec --color specs"
-   plugins:
-     docker-compose#v3.9.0:
-       run: app
+      rspec --color specs"
+   
   
+ 
