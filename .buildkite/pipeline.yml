@@ -1,5 +1,5 @@
-steps:   
- - label: "run post script"
+steps:           
+- label: "run post script"
    command: |
       curl \
        -X POST \
@@ -12,10 +12,10 @@ steps:
        -F "run_env[number]=$BUILDKITE_BUILD_NUMBER" \
        -F "run_env[job_id]=$BUILDKITE_JOB_ID" \
        -F "run_env[message]=$BUILDKITE_MESSAGE" \
-       https://analytics-api.buildkite.com/v1/uploads
-       
-  - name: ":rspec:"
-    command: "rspec --color specs"
-    plugins:
-      docker-compose#v3.9.0:
-        run: app
+       https://analytics-api.buildkite.com/v1/upload
+ - name: ":rspec:"
+   command: "rspec --color specs"
+   plugins:
+     docker-compose#v3.9.0:
+       run: app
+  
