@@ -6,7 +6,7 @@ This repository is an example on how to test a [Ruby](https://www.ruby-lang.org/
 
 ## Running locally
 
-To run this locally:
+To run this locally, do:
 
 ```
 $ docker-compose run app rspec --color specs
